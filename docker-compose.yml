@@ -1,0 +1,13 @@
+version: '2'
+services:
+  database:
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_USER: esportfan
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: esportTournaments
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
